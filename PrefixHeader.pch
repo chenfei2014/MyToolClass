@@ -1,0 +1,61 @@
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+/***** 在#ifdef __OBJC__和#endif之间的内容, 只会拷贝到OC源代码文件中, 不会拷贝到其他语言的源代码文件中 *****/
+#ifdef __OBJC__
+
+///  自定义log
+#ifdef DEBUG
+#define FFLog(...)                  NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define FFLog(...)
+#endif
+#define FFLogFunc                   FFLog(@"%s", __func__);
+
+///  颜色相关
+#define FFColorA(r, g, b, a)        [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define FFColor(r, g, b)            FFColorA((r), (g), (b), 1.0)
+#define FFRandomColor               FFColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define FFGrayColor(v)              FFColor((v), (v), (v))
+#define FFCommonBgColor             FFGrayColor(206)
+#define FFClearColor                [UIColor clearColor]
+
+///  屏幕相关
+#define SCREEN_WIDTH                [UIScreen mainScreen].bounds.size.width
+#define SCREENH_HEIGHT              [UIScreen mainScreen].bounds.size.height
+#define SCREEN_SIZE                 [UIScreen mainScreen].bounds.size
+
+///  通知相关
+#define FFNoteCenter                [NSNotificationCenter defaultCenter]
+
+///  自定义简写
+#define FFStr(...)                  [NSString stringWithFormat:__VA_ARGS__]
+#define FFEql(a,b)                  [(a) isEqual:(b)]
+#define FFIndexPath(a,b)            [NSIndexPath indexPathWithIndexes:(NSUInteger[]){a,b} length:2]
+
+///  设备相关
+#define IS_IPHONE                   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPAD                     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPOD                     ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+#define SYSTEM_VERSION              [[[UIDevice currentDevice] systemVersion] floatValue]
+#define IOS_VERSION_7_OR_LATER      (([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0)? (YES):(NO))
+
+///  判断真机还是模拟器
+#if TARGET_OS_IPHONE
+#endif
+
+#if TARGET_IPHONE_SIMULATOR
+#endif
+
+#define iPhone4                     [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f
+#define iPhone5                     [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f
+#define iPhone6                     [[UIScreen mainScreen] bounds].size.width == 375.0f && [[UIScreen mainScreen] bounds].size.height == 667.0f
+#define iPhone6P                    [[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f
+
+///  沙盒相关
+#define FFTempPath                  NSTemporaryDirectory()
+#define FFDocumentPath              [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+#define FFCachePath                 [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+
+#endif /* __OBJC__ */
+#endif /* PrefixHeader_pch */
