@@ -10,4 +10,7 @@
 - (u_int8_t)ff_blueValue;
 /// alpha 值
 - (CGFloat)ff_alphaValue;
+
+/// CSS颜色  such as #333333
++ (UIColor *)colorWithString:(NSString *)str;
 @end
