@@ -1,9 +1,7 @@
 //
 //  NSDictionary+FFExtension.h
-//  追追漫画
 //
-//  Created by chenfei on 16/7/18.
-//  Copyright © 2016年 Levin Wei. All rights reserved.
+//  Created by 陈飞
 //
 
 #import <Foundation/Foundation.h>

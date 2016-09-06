@@ -1,9 +1,7 @@
- //
-//  NSDate+FFExtension.m
-//  追追漫画
 //
-//  Created by chenfei on 16/7/18.
-//  Copyright © 2016年 Levin Wei. All rights reserved.
+//  NSDate+FFExtension.m
+//
+//  Created by 陈飞
 //
 
 #import "NSDate+FFExtension.h"

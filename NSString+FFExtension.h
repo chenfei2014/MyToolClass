@@ -1,3 +1,8 @@
+//
+//  NSString+FFExtension.h
+//
+//  Created by 陈飞
+//
 
 #import <Foundation/Foundation.h>
 
