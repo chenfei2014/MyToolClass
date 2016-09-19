@@ -4,7 +4,7 @@
 //  Created by 陈飞
 //
 
-#import "UIImage+Extension.h"
+#import "UIImage+FFExtension.h"
 
 @implementation UIImage (FFExtension)
 
