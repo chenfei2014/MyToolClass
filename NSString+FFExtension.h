@@ -19,5 +19,5 @@
 ///  文件大小
 - (long long)ff_fileSize;
 ///  json串
-- (NSString *)ff_jsonStringWithObject(id)object;
+- (NSString *)ff_jsonStringWithObject:(id)object;
 @end

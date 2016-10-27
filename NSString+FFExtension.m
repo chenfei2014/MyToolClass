@@ -54,7 +54,7 @@
     return size;
 }
 
-- (NSString *)ff_jsonStringWithObject(id)object
+- (NSString *)ff_jsonStringWithObject:(id)object
 {
     NSError *error = nil;
     NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:&error];
